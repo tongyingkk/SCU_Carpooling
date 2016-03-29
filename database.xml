@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.4.10
+- http://www.phpmyadmin.net
+-
+- Host: localhost:8889
+- Generation Time: Mar 11, 2016 at 05:54 AM
+- Server version: 5.5.42
+- PHP Version: 7.0.0
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="myDB" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="Drivers">
+                CREATE TABLE `Drivers` (
+                  `driver_id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+                  `email` varchar(50) NOT NULL,
+                  `car_brand` varchar(30) NOT NULL,
+                  `car_model` varchar(30) NOT NULL,
+                  `car_color` varchar(30) NOT NULL,
+                  `plate_num` varchar(10) NOT NULL,
+                  `license_num` varchar(10) NOT NULL,
+                  PRIMARY KEY (`driver_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="Routes">
+                CREATE TABLE `Routes` (
+                  `route_id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+                  `driver_id` int(6) unsigned NOT NULL,
+                  `user_id` int(6) unsigned NOT NULL,
+                  `region` int(1) unsigned NOT NULL,
+                  `direction` int(1) unsigned NOT NULL,
+                  `max_people` int(1) unsigned NOT NULL,
+                  `stop_0` time DEFAULT NULL,
+                  `stop_1` time DEFAULT NULL,
+                  `stop_2` time DEFAULT NULL,
+                  `stop_3` time DEFAULT NULL,
+                  `stop_4` time DEFAULT NULL,
+                  `stop_5` time DEFAULT NULL,
+                  `stop_6` time DEFAULT NULL,
+                  `stop_7` time DEFAULT NULL,
+                  `stop_8` time DEFAULT NULL,
+                  `stop_9` time DEFAULT NULL,
+                  `depart` varchar(20) NOT NULL,
+                  `dest` varchar(20) NOT NULL,
+                  PRIMARY KEY (`route_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="Stops">
+                CREATE TABLE `Stops` (
+                  `stop_id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+                  `stop_name` varchar(20) NOT NULL,
+                  `area` int(1) unsigned NOT NULL,
+                  `sub_index` int(1) unsigned NOT NULL,
+                  PRIMARY KEY (`stop_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="Users">
+                CREATE TABLE `Users` (
+                  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+                  `firstname` varchar(30) NOT NULL,
+                  `lastname` varchar(30) NOT NULL,
+                  `phone` varchar(12) NOT NULL,
+                  `email` varchar(50) NOT NULL,
+                  `psw` varchar(50) NOT NULL,
+                  `is_driver` int(6) unsigned DEFAULT NULL,
+                  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'myDB'
+    -->
+    <database name="myDB">
+        <!-- Table Drivers -->
+        <table name="Drivers">
+            <column name="driver_id">6</column>
+            <column name="email">ytong@scu.edu</column>
+            <column name="car_brand">subaru</column>
+            <column name="car_model">outback</column>
+            <column name="car_color">red</column>
+            <column name="plate_num">G34567654</column>
+            <column name="license_num">F12345</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">8</column>
+            <column name="email">22@scu.edu</column>
+            <column name="car_brand">aaa</column>
+            <column name="car_model">aaa</column>
+            <column name="car_color">aaa</column>
+            <column name="plate_num">sfsgn</column>
+            <column name="license_num">sfskfs</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">9</column>
+            <column name="email">qjiang@scu.edu</column>
+            <column name="car_brand">Toyota</column>
+            <column name="car_model">Prius</column>
+            <column name="car_color">White</column>
+            <column name="plate_num">G653890</column>
+            <column name="license_num">F45326</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">10</column>
+            <column name="email">qhuang@scu.edu</column>
+            <column name="car_brand">BMW</column>
+            <column name="car_model">Mini Copper</column>
+            <column name="car_color">Light Blue</column>
+            <column name="plate_num">G259H32</column>
+            <column name="license_num">F341267</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">11</column>
+            <column name="email">seasoul410@gmail.com</column>
+            <column name="car_brand">Subaru</column>
+            <column name="car_model">Outback</column>
+            <column name="car_color">Red</column>
+            <column name="plate_num">CA12345</column>
+            <column name="license_num">F12345</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">12</column>
+            <column name="email">yzhang@scu.edu</column>
+            <column name="car_brand">Subaru</column>
+            <column name="car_model">Outback</column>
+            <column name="car_color">Red</column>
+            <column name="plate_num">CA12345</column>
+            <column name="license_num">F12345</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">13</column>
+            <column name="email">aaaa@gmaill.com</column>
+            <column name="car_brand">Toyota</column>
+            <column name="car_model">Camry</column>
+            <column name="car_color">Siliver</column>
+            <column name="plate_num">CA12389</column>
+            <column name="license_num">F321654</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">14</column>
+            <column name="email">bbbb@gmail.com</column>
+            <column name="car_brand">Toyota</column>
+            <column name="car_model">Corolla</column>
+            <column name="car_color">Pink</column>
+            <column name="plate_num">CA765432</column>
+            <column name="license_num">F098567</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">15</column>
+            <column name="email">cccc@gmail.com</column>
+            <column name="car_brand">Subaru</column>
+            <column name="car_model">Forester</column>
+            <column name="car_color">Black</column>
+            <column name="plate_num">CA7890432</column>
+            <column name="license_num">F678123</column>
+        </table>
+        <table name="Drivers">
+            <column name="driver_id">16</column>
+            <column name="email">demo@gmail.com</column>
+            <column name="car_brand">Toyota</column>
+            <column name="car_model">Prius</column>
+            <column name="car_color">aa</column>
+            <column name="plate_num">G653890</column>
+            <column name="license_num">F12345</column>
+        </table>
+        <!-- Table Routes -->
+        <table name="Routes">
+            <column name="route_id">42</column>
+            <column name="driver_id">8</column>
+            <column name="user_id">6</column>
+            <column name="region">0</column>
+            <column name="direction">1</column>
+            <column name="max_people">5</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">09:00:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">09:30:00</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">10:00:00</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">10:00:00</column>
+            <column name="depart">SCU</column>
+            <column name="dest">Daly City</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">44</column>
+            <column name="driver_id">8</column>
+            <column name="user_id">6</column>
+            <column name="region">0</column>
+            <column name="direction">1</column>
+            <column name="max_people">6</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">08:40:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">09:00:00</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">09:20:00</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">09:40:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">NULL</column>
+            <column name="depart">SCU</column>
+            <column name="dest">Daly City</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">45</column>
+            <column name="driver_id">6</column>
+            <column name="user_id">2</column>
+            <column name="region">0</column>
+            <column name="direction">1</column>
+            <column name="max_people">5</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">08:40:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">09:00:00</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">09:20:00</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">09:40:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">10:00:00</column>
+            <column name="depart">SCU</column>
+            <column name="dest">San Francisco</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">47</column>
+            <column name="driver_id">8</column>
+            <column name="user_id">6</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">08:30:00</column>
+            <column name="stop_1">08:40:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">09:00:00</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">09:20:00</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">09:40:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">10:00:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">48</column>
+            <column name="driver_id">9</column>
+            <column name="user_id">1</column>
+            <column name="region">0</column>
+            <column name="direction">1</column>
+            <column name="max_people">3</column>
+            <column name="stop_0">11:30:00</column>
+            <column name="stop_1">11:20:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">11:00:00</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">10:40:00</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">10:20:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">10:00:00</column>
+            <column name="depart">SCU</column>
+            <column name="dest">San Francisco</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">50</column>
+            <column name="driver_id">6</column>
+            <column name="user_id">2</column>
+            <column name="region">1</column>
+            <column name="direction">0</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">10:00:00</column>
+            <column name="stop_1">10:10:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">10:40:00</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">11:10:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">11:30:00</column>
+            <column name="depart">Gilroy</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">53</column>
+            <column name="driver_id">6</column>
+            <column name="user_id">2</column>
+            <column name="region">1</column>
+            <column name="direction">0</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">10:00:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">10:40:00</column>
+            <column name="stop_6">10:50:00</column>
+            <column name="stop_7">11:00:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">11:20:00</column>
+            <column name="depart">San Martin</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">54</column>
+            <column name="driver_id">6</column>
+            <column name="user_id">2</column>
+            <column name="region">1</column>
+            <column name="direction">1</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">12:20:00</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">12:00:00</column>
+            <column name="stop_4">11:50:00</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">11:20:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">11:00:00</column>
+            <column name="depart">SCU</column>
+            <column name="dest">San Martin</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">55</column>
+            <column name="driver_id">6</column>
+            <column name="user_id">2</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">4</column>
+            <column name="stop_0">11:00:00</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">11:30:00</column>
+            <column name="stop_4">11:40:00</column>
+            <column name="stop_5">11:50:00</column>
+            <column name="stop_6">12:00:00</column>
+            <column name="stop_7">12:10:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">12:30:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">56</column>
+            <column name="driver_id">9</column>
+            <column name="user_id">1</column>
+            <column name="region">1</column>
+            <column name="direction">1</column>
+            <column name="max_people">3</column>
+            <column name="stop_0">12:30:00</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">12:00:00</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">11:30:00</column>
+            <column name="stop_7">11:20:00</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">11:00:00</column>
+            <column name="depart">SCU</column>
+            <column name="dest">Gilroy</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">58</column>
+            <column name="driver_id">6</column>
+            <column name="user_id">2</column>
+            <column name="region">1</column>
+            <column name="direction">0</column>
+            <column name="max_people">3</column>
+            <column name="stop_0">11:00:00</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">11:20:00</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">11:50:00</column>
+            <column name="stop_6">12:00:00</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">12:30:00</column>
+            <column name="depart">Gilroy</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">63</column>
+            <column name="driver_id">11</column>
+            <column name="user_id">9</column>
+            <column name="region">2</column>
+            <column name="direction">0</column>
+            <column name="max_people">5</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">NULL</column>
+            <column name="depart">Oakland</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">64</column>
+            <column name="driver_id">11</column>
+            <column name="user_id">9</column>
+            <column name="region">0</column>
+            <column name="direction">1</column>
+            <column name="max_people">5</column>
+            <column name="stop_0">NULL</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">NULL</column>
+            <column name="depart">SCU</column>
+            <column name="dest">San Francisco</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">69</column>
+            <column name="driver_id">11</column>
+            <column name="user_id">9</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">4</column>
+            <column name="stop_0">10:00:00</column>
+            <column name="stop_1">10:10:00</column>
+            <column name="stop_2">10:20:00</column>
+            <column name="stop_3">10:30:00</column>
+            <column name="stop_4">10:40:00</column>
+            <column name="stop_5">10:50:00</column>
+            <column name="stop_6">11:00:00</column>
+            <column name="stop_7">11:10:00</column>
+            <column name="stop_8">11:20:00</column>
+            <column name="stop_9">11:30:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">70</column>
+            <column name="driver_id">10</column>
+            <column name="user_id">4</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">11:00:00</column>
+            <column name="stop_1">11:10:00</column>
+            <column name="stop_2">11:20:00</column>
+            <column name="stop_3">11:30:00</column>
+            <column name="stop_4">11:40:00</column>
+            <column name="stop_5">11:50:00</column>
+            <column name="stop_6">12:00:00</column>
+            <column name="stop_7">12:10:00</column>
+            <column name="stop_8">12:20:00</column>
+            <column name="stop_9">12:30:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">71</column>
+            <column name="driver_id">12</column>
+            <column name="user_id">3</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">3</column>
+            <column name="stop_0">12:30:00</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">12:50:00</column>
+            <column name="stop_3">13:00:00</column>
+            <column name="stop_4">13:10:00</column>
+            <column name="stop_5">NULL</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">14:00:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">72</column>
+            <column name="driver_id">11</column>
+            <column name="user_id">9</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">11:10:00</column>
+            <column name="stop_1">11:20:00</column>
+            <column name="stop_2">11:30:00</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">11:50:00</column>
+            <column name="stop_5">12:00:00</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">12:40:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">73</column>
+            <column name="driver_id">13</column>
+            <column name="user_id">11</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">2</column>
+            <column name="stop_0">11:00:00</column>
+            <column name="stop_1">11:10:00</column>
+            <column name="stop_2">11:20:00</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">NULL</column>
+            <column name="stop_5">11:50:00</column>
+            <column name="stop_6">NULL</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">12:20:00</column>
+            <column name="stop_9">12:30:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">74</column>
+            <column name="driver_id">14</column>
+            <column name="user_id">0</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">3</column>
+            <column name="stop_0">11:15:00</column>
+            <column name="stop_1">NULL</column>
+            <column name="stop_2">NULL</column>
+            <column name="stop_3">NULL</column>
+            <column name="stop_4">11:55:00</column>
+            <column name="stop_5">12:05:00</column>
+            <column name="stop_6">12:15:00</column>
+            <column name="stop_7">NULL</column>
+            <column name="stop_8">NULL</column>
+            <column name="stop_9">12:45:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <table name="Routes">
+            <column name="route_id">75</column>
+            <column name="driver_id">15</column>
+            <column name="user_id">0</column>
+            <column name="region">0</column>
+            <column name="direction">0</column>
+            <column name="max_people">3</column>
+            <column name="stop_0">10:55:00</column>
+            <column name="stop_1">11:05:00</column>
+            <column name="stop_2">11:15:00</column>
+            <column name="stop_3">11:25:00</column>
+            <column name="stop_4">11:35:00</column>
+            <column name="stop_5">11:45:00</column>
+            <column name="stop_6">11:55:00</column>
+            <column name="stop_7">12:05:00</column>
+            <column name="stop_8">12:15:00</column>
+            <column name="stop_9">12:25:00</column>
+            <column name="depart">San Francisco</column>
+            <column name="dest">SCU</column>
+        </table>
+        <!-- Table Stops -->
+        <table name="Stops">
+            <column name="stop_id">1</column>
+            <column name="stop_name">San Francisco</column>
+            <column name="area">0</column>
+            <column name="sub_index">0</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">2</column>
+            <column name="stop_name">Daly City</column>
+            <column name="area">0</column>
+            <column name="sub_index">1</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">3</column>
+            <column name="stop_name">Millbrae</column>
+            <column name="area">0</column>
+            <column name="sub_index">2</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">4</column>
+            <column name="stop_name">San Mateo</column>
+            <column name="area">0</column>
+            <column name="sub_index">3</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">5</column>
+            <column name="stop_name">Redwood City</column>
+            <column name="area">0</column>
+            <column name="sub_index">4</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">6</column>
+            <column name="stop_name">Palo Alto</column>
+            <column name="area">0</column>
+            <column name="sub_index">5</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">7</column>
+            <column name="stop_name">Mountain View</column>
+            <column name="area">0</column>
+            <column name="sub_index">6</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">8</column>
+            <column name="stop_name">Sunnyvale</column>
+            <column name="area">0</column>
+            <column name="sub_index">7</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">9</column>
+            <column name="stop_name">Santa Clara</column>
+            <column name="area">0</column>
+            <column name="sub_index">8</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">10</column>
+            <column name="stop_name">SCU</column>
+            <column name="area">0</column>
+            <column name="sub_index">9</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">11</column>
+            <column name="stop_name">Gilroy</column>
+            <column name="area">1</column>
+            <column name="sub_index">0</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">12</column>
+            <column name="stop_name">San Martin</column>
+            <column name="area">1</column>
+            <column name="sub_index">1</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">13</column>
+            <column name="stop_name">Morgan Hill</column>
+            <column name="area">1</column>
+            <column name="sub_index">2</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">14</column>
+            <column name="stop_name">Coyote</column>
+            <column name="area">1</column>
+            <column name="sub_index">3</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">15</column>
+            <column name="stop_name">Westfield Oakridge</column>
+            <column name="area">1</column>
+            <column name="sub_index">4</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">16</column>
+            <column name="stop_name">Los Gatos</column>
+            <column name="area">1</column>
+            <column name="sub_index">5</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">17</column>
+            <column name="stop_name">Campbell</column>
+            <column name="area">1</column>
+            <column name="sub_index">6</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">18</column>
+            <column name="stop_name">Fruitfale</column>
+            <column name="area">1</column>
+            <column name="sub_index">7</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">19</column>
+            <column name="stop_name">Westfield Valley Fai</column>
+            <column name="area">1</column>
+            <column name="sub_index">8</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">20</column>
+            <column name="stop_name">SCU</column>
+            <column name="area">1</column>
+            <column name="sub_index">9</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">21</column>
+            <column name="stop_name">Oakland</column>
+            <column name="area">2</column>
+            <column name="sub_index">0</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">22</column>
+            <column name="stop_name">Alameda</column>
+            <column name="area">2</column>
+            <column name="sub_index">1</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">23</column>
+            <column name="stop_name">San Leandro</column>
+            <column name="area">2</column>
+            <column name="sub_index">2</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">24</column>
+            <column name="stop_name">Hayward</column>
+            <column name="area">2</column>
+            <column name="sub_index">3</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">25</column>
+            <column name="stop_name">Union City</column>
+            <column name="area">2</column>
+            <column name="sub_index">4</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">26</column>
+            <column name="stop_name">Fremont</column>
+            <column name="area">2</column>
+            <column name="sub_index">5</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">27</column>
+            <column name="stop_name">Newark</column>
+            <column name="area">2</column>
+            <column name="sub_index">6</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">28</column>
+            <column name="stop_name">Milpitas</column>
+            <column name="area">2</column>
+            <column name="sub_index">7</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">29</column>
+            <column name="stop_name">San Jose</column>
+            <column name="area">2</column>
+            <column name="sub_index">8</column>
+        </table>
+        <table name="Stops">
+            <column name="stop_id">30</column>
+            <column name="stop_name">SCU</column>
+            <column name="area">2</column>
+            <column name="sub_index">9</column>
+        </table>
+        <!-- Table Users -->
+        <table name="Users">
+            <column name="id">1</column>
+            <column name="firstname">Qianhui</column>
+            <column name="lastname">Jiang</column>
+            <column name="phone">6506666666</column>
+            <column name="email">qjiang@scu.edu</column>
+            <column name="psw">123456</column>
+            <column name="is_driver">9</column>
+            <column name="reg_date">2016-03-09 03:24:21</column>
+        </table>
+        <table name="Users">
+            <column name="id">2</column>
+            <column name="firstname">Ying</column>
+            <column name="lastname">Tong</column>
+            <column name="phone">6507777777</column>
+            <column name="email">ytong@scu.edu</column>
+            <column name="psw">654321</column>
+            <column name="is_driver">6</column>
+            <column name="reg_date">2016-03-09 16:26:08</column>
+        </table>
+        <table name="Users">
+            <column name="id">3</column>
+            <column name="firstname">Yining</column>
+            <column name="lastname">Zhang</column>
+            <column name="phone">6508888888</column>
+            <column name="email">yzhang@scu.edu</column>
+            <column name="psw">123</column>
+            <column name="is_driver">12</column>
+            <column name="reg_date">2016-03-10 15:19:29</column>
+        </table>
+        <table name="Users">
+            <column name="id">4</column>
+            <column name="firstname">Qian</column>
+            <column name="lastname">Huang</column>
+            <column name="phone">6509999999</column>
+            <column name="email">qhuang@scu.edu</column>
+            <column name="psw">456</column>
+            <column name="is_driver">10</column>
+            <column name="reg_date">2016-03-10 01:35:33</column>
+        </table>
+        <table name="Users">
+            <column name="id">5</column>
+            <column name="firstname">test</column>
+            <column name="lastname">test</column>
+            <column name="phone">6666666666</column>
+            <column name="email">66@scu.edu</column>
+            <column name="psw">123</column>
+            <column name="is_driver">2</column>
+            <column name="reg_date">2016-03-07 16:51:43</column>
+        </table>
+        <table name="Users">
+            <column name="id">6</column>
+            <column name="firstname">aaa</column>
+            <column name="lastname">aaa</column>
+            <column name="phone">666</column>
+            <column name="email">22@scu.edu</column>
+            <column name="psw">111</column>
+            <column name="is_driver">8</column>
+            <column name="reg_date">2016-03-08 17:26:54</column>
+        </table>
+        <table name="Users">
+            <column name="id">7</column>
+            <column name="firstname">abc</column>
+            <column name="lastname">abc</column>
+            <column name="phone">abc</column>
+            <column name="email">abc@scu.edu</column>
+            <column name="psw">123</column>
+            <column name="is_driver">0</column>
+            <column name="reg_date">2016-03-08 21:15:05</column>
+        </table>
+        <table name="Users">
+            <column name="id">8</column>
+            <column name="firstname">navid</column>
+            <column name="lastname">sh</column>
+            <column name="phone">1111111111</column>
+            <column name="email">navid@scu.edu</column>
+            <column name="psw">123</column>
+            <column name="is_driver">0</column>
+            <column name="reg_date">2016-03-09 23:31:30</column>
+        </table>
+        <table name="Users">
+            <column name="id">9</column>
+            <column name="firstname">Frank</column>
+            <column name="lastname">Underwood</column>
+            <column name="phone">6500001234</column>
+            <column name="email">seasoul410@gmail.com</column>
+            <column name="psw">123456</column>
+            <column name="is_driver">11</column>
+            <column name="reg_date">2016-03-10 11:52:35</column>
+        </table>
+        <table name="Users">
+            <column name="id">10</column>
+            <column name="firstname">abcd</column>
+            <column name="lastname">efg</column>
+            <column name="phone">6501234567</column>
+            <column name="email">test@scu.edu</column>
+            <column name="psw">123</column>
+            <column name="is_driver">0</column>
+            <column name="reg_date">2016-03-10 15:37:50</column>
+        </table>
+        <table name="Users">
+            <column name="id">11</column>
+            <column name="firstname">Test</column>
+            <column name="lastname">Test</column>
+            <column name="phone">1111111111</column>
+            <column name="email">aaaa@gmaill.com</column>
+            <column name="psw">1</column>
+            <column name="is_driver">13</column>
+            <column name="reg_date">2016-03-10 16:36:58</column>
+        </table>
+        <table name="Users">
+            <column name="id">12</column>
+            <column name="firstname">Sussie</column>
+            <column name="lastname">Wang</column>
+            <column name="phone">6502134567</column>
+            <column name="email">bbbb@gmail.com</column>
+            <column name="psw">1</column>
+            <column name="is_driver">14</column>
+            <column name="reg_date">2016-03-10 16:39:19</column>
+        </table>
+        <table name="Users">
+            <column name="id">13</column>
+            <column name="firstname">Hebe</column>
+            <column name="lastname">Jiang</column>
+            <column name="phone">650123897</column>
+            <column name="email">cccc@gmail.com</column>
+            <column name="psw">1</column>
+            <column name="is_driver">15</column>
+            <column name="reg_date">2016-03-10 16:41:33</column>
+        </table>
+        <table name="Users">
+            <column name="id">14</column>
+            <column name="firstname">Demo</column>
+            <column name="lastname">Liu</column>
+            <column name="phone">650876543</column>
+            <column name="email">demo@gmail.com</column>
+            <column name="psw">123</column>
+            <column name="is_driver">16</column>
+            <column name="reg_date">2016-03-10 17:24:23</column>
+        </table>
+        <table name="Users">
+            <column name="id">15</column>
+            <column name="firstname">Claire</column>
+            <column name="lastname">Underwood</column>
+            <column name="phone">6501231234</column>
+            <column name="email">claire@scu.edu</column>
+            <column name="psw">123</column>
+            <column name="is_driver">0</column>
+            <column name="reg_date">2016-03-10 17:27:09</column>
+        </table>
+    </database>
+</pma_xml_export>
